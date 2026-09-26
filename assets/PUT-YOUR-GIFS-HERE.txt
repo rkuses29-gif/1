@@ -1,0 +1,8 @@
+Put these GIF files in this folder:
+
+intro.gif  - first page
+no.gif     - first NO
+no2.gif    - second NO
+no3.gif    - third NO
+no4.gif    - fourth NO
+final.gif  - final surprise

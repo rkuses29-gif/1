@@ -1,0 +1,173 @@
+```css
+*{box-sizing:border-box}
+
+:root{--pink:#f28dab;--pink2:#ffdce7;--rose:#d95d80;--cream:#fffaf6;--ink:#513640;--muted:#96727e;--blue:#a9dff0;--shadow:0 25px 70px rgba(102,48,71,.15)}
+
+html,body{margin:0;min-height:100%;font-family:"DM Sans",sans-serif;color:var(--ink)}
+
+body{background:#fff3f7;overflow-x:hidden}
+
+button,input{font:inherit}
+
+button{cursor:pointer}
+
+#app{min-height:100vh;position:relative;padding:25px 14px 45px;overflow:hidden;background:
+radial-gradient(circle at 12% 12%,rgba(255,255,255,.9) 0 55px,transparent 56px),
+radial-gradient(circle at 90% 20%,rgba(255,255,255,.7) 0 80px,transparent 81px),
+linear-gradient(135deg,#ffe8f0 0%,#fff7e9 46%,#e9f8ff 100%)}
+
+.sky{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+.cloud{position:absolute;width:150px;height:45px;border-radius:50px;background:rgba(255,255,255,.55);filter:blur(.2px)}
+
+.cloud:before,.cloud:after{content:"";position:absolute;background:inherit;border-radius:50%}
+
+.cloud:before{width:65px;height:65px;left:25px;bottom:8px}
+
+.cloud:after{width:80px;height:80px;right:25px;bottom:0}
+
+.cloud-a{left:-25px;top:110px;transform:scale(.8)}
+
+.cloud-b{right:-35px;top:270px;transform:scale(.65)}
+
+.star{position:absolute;color:#ed9ab1;font-size:25px;animation:twinkle 2.5s ease-in-out infinite}
+
+.star-a{left:8%;top:22%}
+
+.star-b{right:10%;top:12%;animation-delay:.5s}
+
+.star-c{left:15%;bottom:15%;animation-delay:1s}
+
+.star-d{right:12%;bottom:22%;animation-delay:1.5s}
+
+.stage{position:relative;z-index:2;width:min(860px,100%);margin:auto}
+
+.scene{display:none}
+
+.scene.active{display:block;animation:sceneIn .55s cubic-bezier(.2,.8,.2,1)}
+
+.scene-inner{position:relative;min-height:680px;padding:55px 30px 45px;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.95);border-radius:42px;box-shadow:var(--shadow);backdrop-filter:blur(14px);text-align:center;overflow:hidden}
+
+.scene-inner:after{content:"";position:absolute;width:180px;height:180px;background:#ffd7e5;border-radius:50%;right:-70px;bottom:-80px;opacity:.5}
+
+.hero-scene{display:flex;flex-direction:column;align-items:center;justify-content:center}
+
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#c16d87;margin:8px 0 12px}
+
+h1,h2,h3{font-family:"Baloo 2",sans-serif;margin:0;color:#593742}
+
+h1{font-size:clamp(42px,8vw,72px);line-height:.98}
+
+.hero-scene h1 span,h3 span{color:#e47194}
+
+h2{font-size:clamp(36px,7vw,54px);line-height:1.02}
+
+.lead{max-width:540px;margin:14px auto;color:var(--muted);line-height:1.65;font-size:16px}
+
+.tiny-bow{font-size:26px;margin-bottom:2px}
+
+.sticker{position:absolute;top:26px;right:30px;background:#fff1b9;padding:8px 13px;border-radius:12px;transform:rotate(7deg);font-size:12px;font-weight:800;box-shadow:0 5px 0 #ebd48b}
+
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+.btn{border:0;border-radius:999px;padding:14px 22px;font-weight:800;transition:.18s;min-height:48px}
+
+.btn:hover{transform:translateY(-2px)}
+
+.primary{background:#dc6a55;color:white;box-shadow:0 6px 0 #b64e3d}
+
+.ghost{background:white;color:#ba5e7c;border:1px solid #efc7d5;box-shadow:0 5px 0 #f0dce3}
+
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #b64e3d}
+
+.hint{height:24px;color:#d2647f;font-weight:700;font-size:13px}
+
+.penguin-wrap{width:240px;height:285px;margin:0 auto 5px}
+
+.penguin{width:100%;height:100%;filter:drop-shadow(0 15px 10px rgba(82,50,60,.14))}
+
+.penguin .body,.penguin .head,.penguin .wing{fill:#454044}
+
+.penguin .belly,.penguin .face{fill:#fff8ef}
+
+.penguin .eye{fill:#30272b}
+
+.penguin .eye-shine{fill:white}
+
+.penguin .beak{fill:#f3aa50}
+
+.penguin .wing{stroke:#383237;stroke-width:3}
+
+.penguin .foot{fill:#efa14e}
+
+.penguin .shadow{fill:rgba(70,50,55,.1)}
+
+.penguin .gift rect{fill:#ef91ae;stroke:#c96888;stroke-width:2}
+
+.penguin .gift rect:nth-child(2){fill:#f6d59b}
+
+.penguin .gift rect:nth-child(3){fill:#e987a5}
+
+.penguin .gift path{fill:#ef91ae;stroke:#c96888;stroke-width:2}
+
+.penguin .blush{fill:#f4a1b7;opacity:.7}
+
+.progress{display:flex;align-items:center;justify-content:center;gap:8px;color:#c17b91;font-size:12px;font-weight:900;margin-bottom:25px}
+
+.progress span{height:3px;width:55px;background:#f1cad7;border-radius:5px}
+
+.back-btn{position:absolute;top:24px;left:25px;border:0;background:white;border:1px solid #f0d5df;border-radius:999px;padding:9px 14px;color:#ad6078;font-weight:800;z-index:5}
+
+.gif-slot{width:min(320px,70vw);margin:0 auto 18px;display:flex;justify-content:center;align-items:center}
+
+.gif-slot img{display:block;width:100%;height:auto;max-height:260px;object-fit:contain;border-radius:20px;box-shadow:0 12px 28px rgba(128,70,93,.12)}
+
+.final-scene{justify-content:center}
+
+.confetti{font-size:25px;letter-spacing:9px;color:#e995aa;margin-bottom:20px}
+
+.hug-penguins{display:flex;align-items:center;justify-content:center;margin-bottom:5px}
+
+.hug-penguin{font-size:85px;filter:drop-shadow(0 8px 7px rgba(75,45,55,.12))}
+
+.hug-heart{font-size:40px;z-index:2;margin:0 -14px}
+
+.big-hug{font-size:88px;margin:4px 0}
+
+.gift-badge{font-size:32px;margin:8px 0 0}
+
+.final-scene h3{font-size:42px;line-height:.95}
+
+.final-text{font-size:17px;color:#98707d;line-height:1.7;margin:15px auto;max-width:500px}
+
+.heart-row{color:#e47f9e;font-size:27px;letter-spacing:8px;margin:13px}
+
+.button-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+
+.celebrate-box{margin-top:18px;display:flex;justify-content:center}
+
+.celebrate-box[hidden]{display:none!important}
+
+.celebrate-box video{width:min(480px,80vw);border-radius:22px;box-shadow:0 16px 30px rgba(102,48,71,.12);background:#f8dfe7}
+
+.music-pill{position:fixed;right:16px;top:16px;z-index:20;display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.8);border:1px solid white;box-shadow:0 8px 25px rgba(80,40,55,.1);padding:7px 10px;border-radius:999px;backdrop-filter:blur(10px);font-size:13px;color:#a45973}
+
+.music-pill button,.music-pill label{border:0;background:transparent;color:#a45973;font-weight:800;cursor:pointer}
+
+.music-pill label{padding:2px 4px;font-size:17px}
+
+@keyframes sceneIn{
+  from{opacity:0;transform:translateY(18px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:.3;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.2)}
+}
+
+@media(max-width:680px){
+  #app{padding:10px 8px 25px}
+  .scene-inner{min-height:650px;padding:48px 17px 35px;border-radius:30px}
+}
+```

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Birthday Surprise 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="sky">
+      <span class="cloud cloud-a"></span><span class="cloud cloud-b"></span>
+      <span class="star star-a">✦</span><span class="star star-b">✧</span>
+      <span class="star star-c">♡</span><span class="star star-d">✦</span>
+    </div>
+
+    <div class="music-pill" id="musicPill">
+      <span>♪</span>
+      <button id="musicToggle" type="button">Music off</button>
+      <input id="musicInput" type="file" accept="audio/*" hidden>
+      <label for="musicInput" title="Choose music">＋</label>
+    </div>
+    <audio id="music"></audio>
+
+    <main class="stage">
+      <!-- SCENE 1 -->
+<section class="scene active" id="scene-home">
+  <div class="scene-inner hero-scene">
+    <div class="sticker sticker-top">made with ♡</div>
+    <div class="floating-doodles">✦　♡　✧　♡　✦</div>
+
+    <!-- Put your GIF at assets/intro.gif -->
+    <div class="gif-slot hero-gif">
+      <img src="assets/intro.gif" alt="Birthday animation">
+    </div>
+
+    <p class="eyebrow">a tiny surprise has arrived...</p>
+    <h1>Hey, birthday person!<br><span>There's something for you.</span> 💌</h1>
+    <p class="lead">I made this little corner of the internet just for you. Ready?</p>
+
+    <div class="buttons">
+      <button class="btn primary" id="yesBtn">LET'S GO! 💗</button>
+      <button class="btn ghost" id="noBtn">maybe later... 🥺</button>
+    </div>
+    <p class="hint" id="noHint"></p>
+  </div>
+</section>
+
+<!-- SCENE 2 -->
+<section class="scene" id="scene-no">
+  <div class="scene-inner hero-scene">
+    <div class="sticker sticker-top">wait... 💗</div>
+
+    <div class="gif-slot hero-gif no-gif">
+      <img id="noGif" src="assets/no.gif" alt="Birthday surprise animation">
+    </div>
+
+    <p class="eyebrow" id="noEyebrow">oh... you clicked no? 🥺</p>
+    <h1 id="noTitle">Are you <span>really sure?</span></h1>
+    <p class="lead" id="noLead">Maybe this little surprise can change your mind...</p>
+
+    <div class="buttons">
+      <button class="btn primary" data-next="hug">Okay, I accept! 💗</button>
+      <button class="btn ghost" id="noAgain">Still no... 😭</button>
+    </div>
+    <p class="hint" id="noAgainHint"></p>
+  </div>
+</section>
+
+
+      <section class="scene" id="scene-letter">
+        <div class="scene-inner">
+          <button class="back-btn" data-back>← choose another surprise</button>
+          <div class="letter-character">🐧💌</div>
+          <p class="eyebrow">love surprise wrote this...</p>
+          <h2>A tiny letter for you</h2>
+
+          <article class="letter">
+            <div class="letter-tape">♡</div>
+            <p>Dear birthday person,</p>
+            <p>I hope today reminds you just how loved and special you are.</p>
+            <p>I hope this new chapter gives you soft mornings, silly laughs, beautiful memories and people who make your heart feel safe.</p>
+            <p>And whenever life gets a little heavy, I hope you remember that there are people cheering for you. Always. 🌷</p>
+            <p class="signature">With lots of love,<br><b>with lots of love 💗</b></p>
+          </article>
+
+          <button class="btn primary" data-next="hug">One last surprise... 🥺</button>
+        </div>
+      </section>
+
+      <!-- HUG -->
+      <section class="scene" id="scene-hug">
+        <div class="scene-inner final-scene">
+          <div class="confetti">✦ ♡ ✧ ♡ ✦ ♡ ✧</div>
+          <div class="final-gif gif-slot">
+            <img src="assets/final.gif" alt="Final birthday animation">
+          </div>
+          <p class="eyebrow">and finally...</p>
+          <h2>Come here. 🥺</h2>
+          <div class="final-gif gif-slot hug-main">
+            <img src="assets/hug.gif" alt="Virtual hug animation">
+          </div>
+          <h3>THE BIGGEST<br><span>VIRTUAL HUG</span></h3>
+          <p class="final-text">Happy Birthday, you wonderful human. 💗<br>May this year be ridiculously kind to you.</p>
+          <div class="heart-row">♡ ♥ ♡ ♥ ♡</div>
+
+          <div class="button-row">
+            <button class="btn primary" id="restart">Replay from the beginning ↻</button>
+            <button class="btn ghost" id="celebrateBtn">Let's celebrate 🎉</button>
+          </div>
+
+          <div class="celebrate-box" id="celebrateBox" hidden>
+            <video id="celebrateVideo" controls playsinline loop preload="auto" src="assets/celebrate.mp4"></video>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!--
+    GIF files expected in /assets:
+      intro.gif   = opening animation
+      memory.gif  = memory choice
+      video.gif   = video choice
+      letter.gif  = letter choice
+      final.gif   = ending animation
+  -->
+  <script src="script.js"></script>
+</body>
+</html>
